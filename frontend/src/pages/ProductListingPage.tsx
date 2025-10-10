@@ -2,11 +2,17 @@ import React, { useEffect, useState } from "react";
 
 import Filters from "../components/Filters";
 import Grid from "../components/Grid";
-import { Product } from "../types/Product";
 import ProductCard from "../components/ProductCard";
+import { Product } from "../types/Product";
+import { Filter } from "../types/Filter";
 
 const ProductListingPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  /*const [filters, setFilters] = useState({
+    categories : [] as string[],
+    minprice : '',
+    maxprice : ''
+  });*/
 
     useEffect(() => {
         fetch("http://localhost:8080/products")
@@ -14,6 +20,8 @@ const ProductListingPage = () => {
         .then((data: Product[]) => setProducts(data))
         .catch((err) => console.error("Cannot load products", err));
     }, []);
+
+    //useEffect()
 
     return (
         <main>

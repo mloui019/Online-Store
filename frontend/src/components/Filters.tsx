@@ -1,10 +1,10 @@
 import React from "react";
+import styles from "./Filters.module.css";
 
 const Filters = () => {
     return (
-        <aside>
-            <h2> Filters </h2>
-
+        <aside className={styles.filter}>
+        <h2> Filters </h2>
             <div>
                 <h3> Category </h3>
                 <label><input type="checkbox" /> Hair Products </label><br />
@@ -23,10 +23,13 @@ const Filters = () => {
             <div>
                 <h3> Sort By </h3>
                 <select>
+                    <option> None </option>
                     <option> Price: Low to High </option>
                     <option> Price: High to Low </option>
                 </select>
             </div>
+
+            <button>Apply Filters</button>
         </aside>
     );
 };

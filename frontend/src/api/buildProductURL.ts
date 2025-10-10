@@ -1,3 +1,4 @@
+import { Filter } from "../types/Filter"
 
 export function buildProductUrl(params : Record<string, string | number>) {
 
